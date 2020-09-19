@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Conway's Game of Life</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <div id="container">
+
+    <!-- game grid -->
+    <table></table>
+
+    <!-- display game status -->
+    <div id="game_info">
+      <div>Generation: <span id="current_gen">0</span></div>
+      <div>Alive cells: <span id="alive_cells_count">0</span></div>
+    </div>
+
+    <!-- buttons for playing and pausing the game -->
+    <div id="game_controls">
+      <button id="game_play">Play</button>
+      <button id="game_pause">Pause</button>
+      <button id="game_restart">Restart</button>
+    </div>
+
+  </div>
+
+
+  <!-- game logic -->
+  <script src="classes.js"></script>
+  <script type="text/javascript">
+
+    // Create new game instance
+    var numRows = 15;
+    var numColumns = 40;
+    var game = new Game(numRows, numColumns);
+
+
+    // Views / HTML elements
+    var gridDisplay = document.querySelector("table");
+    var currentGenDisplay = document.querySelector("#current_gen");
+    var aliveCellsDisplay = document.querySelector("#alive_cells_count");
+
+    // Initialize views
+    function initViews() {
+      // Display grid
+      game.printGrid(gridDisplay);
+
+      // Display game info
+      currentGenDisplay.innerHTML = game.currentGeneration;
+      aliveCellsDisplay.innerHTML = game.aliveCellsCount;
+    }
+    initViews();
+
+
+    // Update the game
+    function update() {
+      // Update grid
+      game.updateGrid();
+      game.printGrid(gridDisplay);
+
+      // Update game info
+      currentGenDisplay.innerHTML = game.currentGeneration;
+      aliveCellsDisplay.innerHTML = game.aliveCellsCount;
+    }
+
+
+    // Game controls
+    var gameAnimation;
+
+    function playGame() {
+      gameAnimation = setInterval(update, 100);
+    }
+
+    function pauseGame() {
+      clearInterval(gameAnimation);
+    }
+
+    function restartGame() {
+      location.reload();
+    }
+
+    // Map buttons to controls
+    document.querySelector("#game_play").addEventListener("click", playGame);
+    document.querySelector("#game_pause").addEventListener("click", pauseGame);
+    document.querySelector("#game_restart").addEventListener("click", restartGame);
+
+  </script>
+
+</body>
+</html>

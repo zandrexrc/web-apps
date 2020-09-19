@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  font-family: "Helvetica", sans-serif;
+  color: #333;
+}
+
+/* ==================== Flexbox classes ==================== */
+#container {
+  width: 100%;
+  height: 100vh;
+}
+
+.box {
+  width: 200px;
+  height: 320px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.centered {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ==================== Player display ==================== */
+#p1hand {
+  background-image: url("images/1q.png");
+  background-color: #1c3c50;
+}
+
+#p2hand{
+	background-image: url('images/2q.png');
+	background-color: #ff4b39;
+}
+
+.playerhand {
+  width: 198px;
+  height: 198px;
+  border-radius: 100px;
+  background-position: center;
+  background-size: 200px;
+}
+
+.playername {
+  text-transform: uppercase;
+}
+
+.playerkeys {
+  width: 180px;
+  justify-content: space-between;
+}
+
+.playerkey {
+  width: 50px;
+  height: 70px;
+  flex-flow: column wrap;
+}
+
+.playerkey img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+
+/* ==================== Timer + scoreboard ==================== */
+#infobox {
+  margin: 0 50px;
+  height: 300px;
+}
+
+#status {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #333;
+  color: #333;
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button{
+	outline: none;
+	padding: 10px 20px;
+	border: 1px solid #333;
+	color: #fff;
+	background-color: #333;
+	cursor: pointer;
+}
+
+button:hover{
+	color: #333;
+	background-color: #fff;
+}
+
+#scoreboard {
+  width: 150px;
+}
+
+#scoreboard span {
+  width: 50%;
+  height: 50px;
+  color: #fff;
+}
+
+#p1score{
+	background-color: #1c3c50;
+}
+
+#p2score{
+	background-color: #ff4b39;
+}
+
+
+/* ==================== Help ==================== */
+#help {
+  display: none;
+  width: 700px;
+  height: 300px;
+  padding: 10px;
+  position: fixed;
+  top: calc(50% - 320px / 2);
+  left: calc(50% - 720px / 2);
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid #333;
+}
+
+.helpbox {
+  width: 50%;
+  font-size: 0.9em;
+  color: #fff;
+}
+
+.helpbox b {
+  font-size: 0.8em;
+  font-weight: normal;
+  padding: 5px;
+  color: #fff;
+  background-color: #333;
+}
+
+.helpbox i {
+  font-size: 0.8em;
+}
+
+.helpbox div {
+  width: 250px;
+  height: 250px;
+  background-color: #ffff00;
+}
+
+#hidehelpbutton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #333;
+  background-color: #fff;
+  border: none;
+}
+
+#showhelpbutton {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 10px 15px;
+}

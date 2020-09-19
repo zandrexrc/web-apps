@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Magic 8 Ball</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <div id="container">
+    <!-- ball -->
+    <div id="ball">
+      <div id="ballmessage"><b>8</b></div>
+    </div>
+
+    <!-- text field -->
+    <div id="input">
+      <input type="text" value="" placeholder="Ask a question">
+      <button onclick="ask()">Ask</button>
+    </div>
+
+    <!-- disclaimer -->
+    <a href="#" onclick="showDisclamer()">disclaimer.</a>
+    <div id="disclaimer">
+      <p>
+        This web app is made for entertainment purposes only. The responses
+        are chosen randomly, and should be taken with a grain of salt.<br>
+        Furthermore, this web app and its creator holds no responsibility for
+        the user's decisions and actions after using the app.
+      </p>
+      <a href="#" onclick="hideDisclaimer()">got it.</a>
+    </div>
+  </div>
+
+  <!-- js -->
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>

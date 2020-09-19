@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Rock, paper, scissors</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <div id="container" class="centered">
+
+    <!-- Player 1 -->
+    <div class="box">
+      <!-- Hand -->
+      <div id="p1hand" class="playerhand"></div>
+      <div class="playername">Player 1</div>
+      <!-- Instructions -->
+      <div class="playerkeys centered">
+        <div class="playerkey centered"><img src="images/1r.png">A</div>
+        <div class="playerkey centered"><img src="images/1p.png">S</div>
+        <div class="playerkey centered"><img src="images/1s.png">D</div>
+      </div>
+    </div>
+
+    <!-- Game status -->
+    <div id="infobox" class="box">
+      <!-- Timer / result -->
+      <div id="status" class="centered">READY</div>
+      <button id="playbutton" onclick="startMatch()">START</button>
+      <!-- Scoreboard -->
+      <div id="scoreboard" class="centered">
+        <span id="p1score" class="centered">0</span>
+        <span id="p2score" class="centered">0</span>
+      </div>
+    </div>
+
+    <!-- Player 2 -->
+    <div class="box">
+      <!-- Hand -->
+      <div id="p2hand" class="playerhand"></div>
+      <div class="playername">Player 2</div>
+      <!-- Instructions -->
+      <div class="playerkeys centered">
+        <div class="playerkey centered"><img src="images/2r.png"><b>←</b></div>
+        <div class="playerkey centered"><img src="images/2p.png"><b>↓</b></div>
+        <div class="playerkey centered"><img src="images/2s.png"><b>→</b></div>
+      </div>
+    </div>
+
+  </div> <!-- /container -->
+
+
+  <!-- Help modal window -->
+  <button id="showhelpbutton" onclick="showHelp()">?</button>
+  <div id="help" class="centered">
+    <div class="helpbox centered">
+      Instructions:
+      <ol>
+        <li>Click the <b>START</b> button to start the match.</li>
+        <li>Send in your choice by pressing the corresponding key.<br>
+            <i>Each player has three seconds to make their choice.<br>
+            Multiple choices can be sent in during this time, but only the
+            last one sent before the timer ends is locked in.</i>
+        </li>
+        <li>Check the result.</li>
+        <li>Players can opt to go for a rematch. <br>
+          <i>The scoreboard will not be cleared
+          unless the page is refreshed.</i></li>
+        </ol>
+    </div>
+    <div class="helpbox centered">
+      <img src="images/help.gif">
+    </div>
+    <button id="hidehelpbutton" onclick="hideHelp()">x</button>
+  </div>
+
+
+  <!-- js -->
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
